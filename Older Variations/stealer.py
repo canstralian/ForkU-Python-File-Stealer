@@ -21,10 +21,10 @@ def is_file_allowed(file_path):
 
 
 def is_directory_allowed(directory_path):
-    for blacklisted_directory in BLACKLISTED_DIRECTORIES:
-        if str(directory_path).startswith(blacklisted_directory):
-            return False
-    return True
+    return not any(
+        str(directory_path).startswith(blacklisted_directory)
+        for blacklisted_directory in BLACKLISTED_DIRECTORIES
+    )
 
 
 def send_discord_message(message):

