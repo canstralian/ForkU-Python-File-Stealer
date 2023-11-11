@@ -73,7 +73,11 @@ def thread_files(root_dirs):
     for root_dir in root_dirs:
         search_files(root_dir)
 # Get a list of all available drives
-drives = ["%s:\\" % d for d in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" if os.path.exists("%s:" % d)]
+drives = [
+    "%s:\\" % d
+    for d in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    if os.path.exists(f"{d}:")
+]
 # Split the drives into groups of 4
 drive_groups = [drives[i:i+4] for i in range(0, len(drives), 4)]
 # Search for files in each group in parallel

