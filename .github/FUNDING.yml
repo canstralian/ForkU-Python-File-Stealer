@@ -1,0 +1,12 @@
+# FUNDING.yml
+
+github: canstralian   
+
+patreon: canstralian   
+open_collective: canstralian   
+ko_fi: canstralian   
+
+custom:
+  - type: company
+    url: https://example.com
+    logo: https://example.com/logo.png
